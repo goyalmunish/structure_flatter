@@ -1,5 +1,4 @@
 require_relative '../spec_helper'
-require_relative '../../lib/structure_flatter/array_hash_structure'
 
 module StructureFlatter
   describe ArrayHashStructure do # EXAMPLE GROUP
@@ -34,26 +33,26 @@ module StructureFlatter
 
     describe '.flatten_root!' do
       it 'flattens flattable key-value pair' do
-        StructureFlatter::ArrayHashStructure.flatten_key_value_pair!(*key_value_pair_1).should == key_value_pair_1_result
+        ArrayHashStructure.flatten_key_value_pair!(*key_value_pair_1).should == key_value_pair_1_result
       end
 
       it 'does not affect non-flattable key-value pair' do
-        StructureFlatter::ArrayHashStructure.flatten_key_value_pair!(*key_value_pair_1_result).should == key_value_pair_1_result
+        ArrayHashStructure.flatten_key_value_pair!(*key_value_pair_1_result).should == key_value_pair_1_result
       end
 
       it 'does not affect non-flattable key-value pair with nil value' do
         array = [:key, nil]
-        StructureFlatter::ArrayHashStructure.flatten_key_value_pair!(*array).should == array
+        ArrayHashStructure.flatten_key_value_pair!(*array).should == array
       end
 
       it 'does not affect non-flattable key-value pair with empty array as value' do
         array = [:key, []]
-        StructureFlatter::ArrayHashStructure.flatten_key_value_pair!(*array).should == array
+        ArrayHashStructure.flatten_key_value_pair!(*array).should == array
       end
 
       it 'does not affect non-flattable key-value pair with empty hash as value' do
         array = [:key, {}]
-        StructureFlatter::ArrayHashStructure.flatten_key_value_pair!(*array).should == array
+        ArrayHashStructure.flatten_key_value_pair!(*array).should == array
       end
     end
 
