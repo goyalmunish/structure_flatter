@@ -67,4 +67,3 @@ module StructureFlatter
     end
   end
 end
-
