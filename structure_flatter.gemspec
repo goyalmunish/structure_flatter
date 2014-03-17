@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["munishapc@gmail.com"]
   spec.description   = %q{Flattens hash-array structures by removing redundant information.}
   spec.summary       = %q{Flattens Hash Array Structures}
-  spec.homepage      = "http://www.linkedin.com/in/goyalmunish"
+  spec.homepage      = "https://github.com/goyalmunish/structure_flatter"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)
