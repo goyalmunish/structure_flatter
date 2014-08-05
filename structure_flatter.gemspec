@@ -23,6 +23,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "awesome_print", ">= 1.2"
   spec.add_development_dependency "rspec", "~> 3.0.0"
   spec.add_development_dependency "autotest"
+  spec.add_development_dependency "rspec-autotest"
   spec.add_development_dependency "simplecov"
   spec.add_dependency "activesupport", "~> 4.0"
   spec.required_ruby_version = '>=1.9'
