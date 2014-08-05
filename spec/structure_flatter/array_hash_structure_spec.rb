@@ -33,26 +33,26 @@ module StructureFlatter
 
     describe '.flatten_root!' do
       it 'flattens flattable key-value pair' do
-        ArrayHashStructure.flatten_key_value_pair!(*key_value_pair_1).should == key_value_pair_1_result
+        expect(ArrayHashStructure.flatten_key_value_pair!(*key_value_pair_1)).to eq(key_value_pair_1_result)
       end
 
       it 'does not affect non-flattable key-value pair' do
-        ArrayHashStructure.flatten_key_value_pair!(*key_value_pair_1_result).should == key_value_pair_1_result
+        expect(ArrayHashStructure.flatten_key_value_pair!(*key_value_pair_1_result)).to eq(key_value_pair_1_result)
       end
 
       it 'does not affect non-flattable key-value pair with nil value' do
         array = [:key, nil]
-        ArrayHashStructure.flatten_key_value_pair!(*array).should == array
+        expect(ArrayHashStructure.flatten_key_value_pair!(*array)).to eq(array)
       end
 
       it 'does not affect non-flattable key-value pair with empty array as value' do
         array = [:key, []]
-        ArrayHashStructure.flatten_key_value_pair!(*array).should == array
+        expect(ArrayHashStructure.flatten_key_value_pair!(*array)).to eq(array)
       end
 
       it 'does not affect non-flattable key-value pair with empty hash as value' do
         array = [:key, {}]
-        ArrayHashStructure.flatten_key_value_pair!(*array).should == array
+        expect(ArrayHashStructure.flatten_key_value_pair!(*array)).to eq(array)
       end
     end
 
