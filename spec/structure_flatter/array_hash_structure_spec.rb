@@ -8,26 +8,26 @@ module StructureFlatter
 
     describe '.is_root_flattable?' do
       it 'returns true for simple flattable key-value pair' do
-        ArrayHashStructure.is_key_value_pair_flattable?(*key_value_pair_1).should be_true
+        expect(ArrayHashStructure.is_key_value_pair_flattable?(*key_value_pair_1)).to be true
       end
 
       it 'returns false for non-flattable nil value' do
         array = [:key, nil]
-        ArrayHashStructure.is_key_value_pair_flattable?(*array).should be_false
+        expect(ArrayHashStructure.is_key_value_pair_flattable?(*array)).to be false
       end
 
       it 'returns false for non-flattable empty array as value' do
         array = [:key, []]
-        ArrayHashStructure.is_key_value_pair_flattable?(*array).should be_false
+        expect(ArrayHashStructure.is_key_value_pair_flattable?(*array)).to be false
       end
 
       it 'returns false for non-flattable empty hash as value' do
         array = [:key, {}]
-        ArrayHashStructure.is_key_value_pair_flattable?(*array).should be_false
+        expect(ArrayHashStructure.is_key_value_pair_flattable?(*array)).to be false
       end
 
       it 'returns false for non-flattable key-value pair' do
-        ArrayHashStructure.is_key_value_pair_flattable?(*key_value_pair_1_result).should be_false
+        expect(ArrayHashStructure.is_key_value_pair_flattable?(*key_value_pair_1_result)).to be false
       end
     end
 
