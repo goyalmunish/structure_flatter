@@ -59,38 +59,35 @@ module StructureFlatter
     describe '#flatten_structure!' do
       it 'returns nil structure as it is' do
         str = ArrayHashStructure.new(nil_structure).flatten_structure!
-        str.should == nil_structure
+        expect(str).to eq(nil_structure)
       end
       it 'returns empty hash as it is' do
         str = ArrayHashStructure.new(empty_hash_structure).flatten_structure!
-        str.should == empty_hash_structure
+        expect(str).to eq(empty_hash_structure)
       end
       it 'returns empty array as it is' do
         str = ArrayHashStructure.new(empty_array_structure).flatten_structure!
-        str.should == empty_array_structure
+        expect(str).to eq(empty_array_structure)
       end
       it 'flattens simple Hash structure' do
         str = ArrayHashStructure.new(simple_hash_structure).flatten_structure!
-        str.should == simple_hash_structure_result
+        expect(str).to eq(simple_hash_structure_result)
       end
       it 'flattens complex Hash structure' do
         str = ArrayHashStructure.new(complex_hash_structure).flatten_structure!
-        str.should == complex_hash_structure_result
+        expect(str).to eq(complex_hash_structure_result)
       end
       it 'flattens complex Hash with mixed string and keys structure' do
         str = ArrayHashStructure.new(complex_hash_with_mixed_string_and_keys_structure).flatten_structure!
-        str.should == complex_hash_with_mixed_string_and_keys_structure_result
+        expect(str).to eq(complex_hash_with_mixed_string_and_keys_structure_result)
       end
       it 'flattens complex Array structure' do
         str = ArrayHashStructure.new(complex_array_structure).flatten_structure!
-        str.should == complex_array_structure_result
+        expect(str).to eq(complex_array_structure_result)
       end
       it 'flattens complex nested structure' do
         str = ArrayHashStructure.new(complex_nested_structure).flatten_structure!
-        #ap VariousStructures.structure4
-        #ap VariousStructures.structure4_result
-        #ap str
-        str.should == complex_nested_structure_result
+        expect(str).to eq(complex_nested_structure_result)
       end
     end
 
